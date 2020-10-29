@@ -4,6 +4,7 @@ import {
   CCreateElement,
   CSidebar,
   CSidebarBrand,
+  CImg,
   CSidebarNav,
   CSidebarNavDivider,
   CSidebarNavTitle,
@@ -24,18 +25,20 @@ const TheSidebar = () => {
   return (
     <CSidebar
       show={show}
+      minimize={true}
+      style={{backgroundColor:"#00923f"}}
       onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
     >
-      <CSidebarBrand className="d-md-down-none" to="/">
-        <CIcon
+      <CSidebarBrand style={{backgroundColor: "#4fc980"}} className="d-md-down-none" to="/">
+        <CImg
           className="c-sidebar-brand-full"
-          name="logo-negative"
-          height={35}
+          src="https://bengkuluekspress.com/wp-content/uploads/2016/06/logo-BPOM.png"
+          width="80%"
         />
-        <CIcon
+        <CImg
           className="c-sidebar-brand-minimized"
-          name="sygnet"
-          height={35}
+          src="https://www.pom.go.id/new/data/logo-2016-s.png"
+          width="80%"
         />
       </CSidebarBrand>
       <CSidebarNav>

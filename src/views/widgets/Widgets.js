@@ -190,7 +190,7 @@ const Widgets = () => {
         </CWidgetProgressIcon>
         <CWidgetProgressIcon
           header="1238"
-          text="Products sold"
+          text="Products solds"
           color="gradient-warning"
           inverse
         >

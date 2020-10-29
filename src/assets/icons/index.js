@@ -34,7 +34,8 @@ import {
   cifIn,
   cifFr,
   cifEs,
-  cifPl
+  cifPl,
+  cifId
 } from '@coreui/icons'
 import {
   cilAlignCenter,
@@ -232,7 +233,8 @@ export const icons = Object.assign({}, {
   cifIn,
   cifFr,
   cifEs,
-  cifPl
+  cifPl,
+  cifId
 }, {
   cibSkype,
   cibFacebook,

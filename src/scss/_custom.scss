@@ -1,1 +1,16 @@
-// Here you can add other styles
+ $theme-colors: (
+  "biru-gradient": linear-gradient(90deg, rgba(0,146,63,1) 0%, rgba(10,116,75,1) 15%, rgba(21,82,88,1) 47%, rgba(25,69,93,1) 58%, rgba(26,65,94,1) 61%, rgba(30,53,99,1) 75%, rgba(40,22,111,1) 100%)
+);
+.image {
+  border-radius: 100%;
+}
+div.imagu {
+  width: 100%;
+  height:100%;
+  background-image : url(https://firebasestorage.googleapis.com/v0/b/login-laporan-rapat.appspot.com/o/imageedit_14_5762974811.gif?alt=media&token=166b4a9a-2fff-4372-9d89-7e041cdcec90);
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-size:100%
+
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState}  from 'react'
 import { Link } from 'react-router-dom'
 import {
   CButton,
@@ -16,9 +16,27 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-const Login = () => {
+
+const Login = (props) => {
+  const [value, setValue] = useState({email: '', password: '', submitting: false})
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setValue(prevState => ({...prevState, submitting : true }));
+    props.onSubmit(value.email, value.password);
+  };
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setValue(prevState => ({...prevState, [name]: value }));
+  }; 
+
+
+  /* setNilai(prevState => ({...prevState, [name] : value, totalkemasan : value })); */
+  console.log("username", value.email)
+  console.log("password", value.password)
   return (
-    <div className="c-app c-default-layout flex-row align-items-center">
+    <div className="c-app flex-row align-items-center imagu">
       <CContainer>
         <CRow className="justify-content-center">
           <CCol md="8">
@@ -27,14 +45,14 @@ const Login = () => {
                 <CCardBody>
                   <CForm>
                     <h1>Login</h1>
-                    <p className="text-muted">Sign In to your account</p>
+                    <p className="text-muted">Harap Masukkan Username dan Password</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupPrepend>
                         <CInputGroupText>
                           <CIcon name="cil-user" />
                         </CInputGroupText>
                       </CInputGroupPrepend>
-                      <CInput type="text" placeholder="Username" autoComplete="username" />
+                      <CInput onChange={handleChange.bind(this)} name="email" type="text" placeholder="Username" autoComplete="username" />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupPrepend>
@@ -42,11 +60,11 @@ const Login = () => {
                           <CIcon name="cil-lock-locked" />
                         </CInputGroupText>
                       </CInputGroupPrepend>
-                      <CInput type="password" placeholder="Password" autoComplete="current-password" />
+                      <CInput onChange={handleChange.bind(this)} name="password" type="password" placeholder="Password" autoComplete="current-password" />
                     </CInputGroup>
                     <CRow>
                       <CCol xs="6">
-                        <CButton color="primary" className="px-4">Login</CButton>
+                        <CButton onClick={handleSubmit.bind(this)} color="primary" className="px-4">Login</CButton>
                       </CCol>
                       <CCol xs="6" className="text-right">
                         <CButton color="link" className="px-0">Forgot password?</CButton>
@@ -55,15 +73,15 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5 d-md-down-none" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
+              <CCard className="text-black bg-secondary py-5 d-md-down-none" style={{ width: '44%', backgroundColor:"#00923f"}} >
+                <CCardBody>
                   <div>
-                    <h2>Sign up</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.</p>
-                    <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>Register Now!</CButton>
-                    </Link>
+                    <h1><b>DANAKU</b></h1>
+                    <h5>Sistem Pengajuan dan Pelaporan Persekot</h5>
+                    <div className="pt-3">
+                    <p>Konten yang ada di aplikasi ini diperuntukkan khusus untuk personel berwenang dan terotorisasi</p>
+                    <p>Untuk mendapatkan akses, harap menghubungi Seksi TOP</p>
+                    </div>                   
                   </div>
                 </CCardBody>
               </CCard>
